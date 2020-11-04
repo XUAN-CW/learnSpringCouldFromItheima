@@ -7,6 +7,10 @@ spring:
     username: root
     password: root
   application:
-    name: user-service
+    name: user-service #指定应用名称，将来会作为服务的id使用
 mybatis:
   type-aliases-package: com.itheima.user.pojo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
