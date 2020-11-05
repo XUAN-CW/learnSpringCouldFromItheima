@@ -42,4 +42,11 @@ public class ConsumerController {
     }
 
 
+    // http://localhost:8080/consumer/queryByIdRibbon/8
+    @GetMapping("/queryByIdRibbon/{id}")
+    public User queryByIdRibbon(@PathVariable("id") Long id){
+        String url = "http://user-service/user/" + id;
+        User user = restTemplate.getForObject(url, User.class);
+        return user;
+    }
 }
