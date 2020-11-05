@@ -1,0 +1,16 @@
+server:
+  port: ${port:9091}
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud
+    username: root
+    password: root
+  application:
+    name: user-service #指定应用名称，将来会作为服务的id使用
+mybatis:
+  type-aliases-package: com.itheima.user.pojo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
