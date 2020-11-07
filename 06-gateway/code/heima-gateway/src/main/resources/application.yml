@@ -3,6 +3,16 @@ server:
 spring:
   application:
     name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        # 路由id，可以任意
+        - id: user-service-route
+          # 代理的服务地址
+          uri: http://127.0.0.1:9091 # http://localhost:10010/user/8 --> http://127.0.0.1:9091/user/8
+          # 路由断言： 可以匹配映射路径
+          predicates:
+            - Path=/user/**
 
 eureka:
   client:
