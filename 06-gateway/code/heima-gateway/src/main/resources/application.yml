@@ -13,6 +13,9 @@ spring:
           # 路由断言： 可以匹配映射路径
           predicates:
             - Path=/user/**
+          filters:
+            # 自定义过滤器，访问 http://localhost:10010/user/8?name=itcast
+            - MyParam=name
       default-filters:
         # 响应头过滤器，对输出的响应设置其头部属性名称为X-Response-Default-MyName，值为itcast；如果有多个参数多则重写一行设置不同的参数
         # http://localhost:10010/user/8
